@@ -8,6 +8,12 @@ use spacetimedb::spacetimedb_lib as __lib;
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]
 pub struct Identity(pub spacetimedb::Identity);
 
+impl From<spacetimedb::Identity> for Identity {
+    fn from(identity: spacetimedb::Identity) -> Self {
+        Self(identity)
+    }
+}
+
 impl spacetimedb::SpacetimeType for Identity {
     fn make_type<S: spacetimedb::spacetimedb_lib::sats::typespace::TypespaceBuilder>(
         typespace: &mut S,

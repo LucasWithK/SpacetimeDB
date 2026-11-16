@@ -180,6 +180,7 @@ mod caller {{
             let _: ::std::string::String = custom_args.builtin;
             let _: crate::receiver::String = custom_args.custom;
         }};
+        let _: crate::receiver::Identity = ::spacetimedb::Identity::ZERO.into();
     }}
 }}
 "#
